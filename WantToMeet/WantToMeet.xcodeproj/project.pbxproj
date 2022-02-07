@@ -16,6 +16,7 @@
 		0042936E27AF1DEA000390E7 /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042936D27AF1DEA000390E7 /* PlacesTableViewController.swift */; };
 		0042937027AF1FB2000390E7 /* PlaceFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042936F27AF1FB2000390E7 /* PlaceFinderViewController.swift */; };
 		0042937227AF3813000390E7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042937127AF3813000390E7 /* MapViewController.swift */; };
+		00A8372827B0A33D0029E53B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8372727B0A33D0029E53B /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		0042936D27AF1DEA000390E7 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 		0042936F27AF1FB2000390E7 /* PlaceFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFinderViewController.swift; sourceTree = "<group>"; };
 		0042937127AF3813000390E7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		00A8372727B0A33D0029E53B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				0042935D27AF1825000390E7 /* Main.storyboard */,
 				0042937127AF3813000390E7 /* MapViewController.swift */,
 				0042936F27AF1FB2000390E7 /* PlaceFinderViewController.swift */,
+				00A8372727B0A33D0029E53B /* Place.swift */,
 				0042936D27AF1DEA000390E7 /* PlacesTableViewController.swift */,
 				0042936027AF1826000390E7 /* Assets.xcassets */,
 				0042936227AF1826000390E7 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 				0042936E27AF1DEA000390E7 /* PlacesTableViewController.swift in Sources */,
 				0042935827AF1825000390E7 /* AppDelegate.swift in Sources */,
 				0042937027AF1FB2000390E7 /* PlaceFinderViewController.swift in Sources */,
+				00A8372827B0A33D0029E53B /* Place.swift in Sources */,
 				0042935A27AF1825000390E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
