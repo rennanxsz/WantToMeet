@@ -201,7 +201,7 @@ dois segundos</string>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pt-aY-EVG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pt-aY-EVG">
                                         <rect key="frame" x="284" y="91" width="80" height="31"/>
                                         <color key="backgroundColor" name="main"/>
                                         <constraints>
@@ -209,6 +209,7 @@ dois segundos</string>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Escolher">
+                                            <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="14"/>
                                             <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -253,6 +254,7 @@ dois segundos</string>
                                     <constraint firstItem="hxB-1a-HRb" firstAttribute="leading" secondItem="9AT-Iw-K0u" secondAttribute="leading" constant="10" id="SYl-2T-pNC"/>
                                     <constraint firstAttribute="bottom" secondItem="Nyl-rf-EGS" secondAttribute="bottom" constant="10" id="Tne-nr-rY1"/>
                                     <constraint firstAttribute="trailing" secondItem="fcD-ho-dAT" secondAttribute="trailing" constant="10" id="WrN-Uo-J5C"/>
+                                    <constraint firstItem="7Pt-aY-EVG" firstAttribute="height" secondItem="hxB-1a-HRb" secondAttribute="height" multiplier="0.911765" id="bCU-2S-PK2"/>
                                     <constraint firstItem="fcD-ho-dAT" firstAttribute="top" secondItem="9AT-Iw-K0u" secondAttribute="top" constant="30" id="cjL-6k-SAI"/>
                                     <constraint firstItem="vp5-iZ-Qqg" firstAttribute="leading" secondItem="9AT-Iw-K0u" secondAttribute="leading" id="f7V-r7-jDW"/>
                                     <constraint firstAttribute="trailing" secondItem="WMb-2f-ZwV" secondAttribute="trailing" constant="10" id="f9z-f5-2XM"/>
@@ -305,7 +307,7 @@ dois segundos</string>
         <image name="cancel" width="30" height="30"/>
         <image name="cellIcon" width="40" height="40"/>
         <namedColor name="main">
-            <color red="0.0039215686274509803" green="0.71764705882352942" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0040000001899898052" green="0.71799999475479126" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

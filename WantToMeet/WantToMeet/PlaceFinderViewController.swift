@@ -31,6 +31,8 @@ class PlaceFinderViewController: UIViewController {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { (placemarks, error) in
             self.load(show: false)
+            guard let placemark = placemarks?.first else {return}
+            print(Place.getFormattedAddress(with: placemark))
         }
     }
     
