@@ -17,6 +17,13 @@ class PlacesTableViewController: UITableViewController {
         loadPlaces()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "mapSegue" {
+            let vc = segue.destination as! PlaceFinderViewController
+            vc.delegade = self
+        }
+    }
+    
     func loadPlaces() {
         if let placesData = ud.data(forKey: "places") {
             do {
@@ -29,7 +36,8 @@ class PlacesTableViewController: UITableViewController {
     }
     
     func savePlaces() {
-        let json = try? JSONEncoder().encode([places])
+        let json = try? JSONEncoder().encode(places)
+        ud.set(json, forKey: "places")
     }
 
     // MARK: - Table view data source
@@ -42,9 +50,8 @@ class PlacesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        // Configure the cell...
-
+        let places = places[indexPath.row]
+        cell.textLabel?.text = places.name
         return cell
     }
 
