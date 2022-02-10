@@ -84,7 +84,7 @@
                                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cpS-Dc-ZYS">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7BC-E6-7Jm">
                                         <rect key="frame" x="0.0" y="50" width="394" height="486"/>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5Z-EX-l46">
@@ -132,6 +132,12 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="o5Z-EX-l46" firstAttribute="top" secondItem="7BC-E6-7Jm" secondAttribute="bottom" constant="6" id="4CS-xv-N5c"/>
+                                    <constraint firstItem="7BC-E6-7Jm" firstAttribute="leading" secondItem="Kvv-9a-VjZ" secondAttribute="leading" id="4K6-TQ-J5K"/>
+                                    <constraint firstAttribute="trailing" secondItem="7BC-E6-7Jm" secondAttribute="trailing" id="eG6-dl-ITo"/>
+                                    <constraint firstItem="7BC-E6-7Jm" firstAttribute="top" secondItem="XGw-go-LMZ" secondAttribute="bottom" constant="6" id="hTD-ZD-iMN"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pfy-3B-MqW"/>
@@ -157,7 +163,7 @@
                     <connections>
                         <outlet property="lbAddress" destination="bqW-A3-2W6" id="Tmc-Sr-TBM"/>
                         <outlet property="lbName" destination="Joe-fL-yMh" id="3wp-Du-sd6"/>
-                        <outlet property="mapView" destination="cpS-Dc-ZYS" id="W8J-IP-hKX"/>
+                        <outlet property="mapView" destination="7BC-E6-7Jm" id="xcK-dg-10B"/>
                         <outlet property="searchBar" destination="XGw-go-LMZ" id="teg-s6-cCN"/>
                         <outlet property="viInfo" destination="o5Z-EX-l46" id="IyT-sw-WFu"/>
                     </connections>
