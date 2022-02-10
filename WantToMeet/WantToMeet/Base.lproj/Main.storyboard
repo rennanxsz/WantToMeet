@@ -76,7 +76,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Kvv-9a-VjZ">
                                 <rect key="frame" x="10" y="150" width="394" height="702"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" text="" placeholder="O que você deseka buscar?" translatesAutoresizingMaskIntoConstraints="NO" id="XGw-go-LMZ">
+                                    <searchBar contentMode="redraw" text="" placeholder="O que você deseja buscar?" translatesAutoresizingMaskIntoConstraints="NO" id="XGw-go-LMZ">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="NoO-EC-gEw"/>
@@ -158,7 +158,7 @@
                         <outlet property="lbAddress" destination="bqW-A3-2W6" id="Tmc-Sr-TBM"/>
                         <outlet property="lbName" destination="Joe-fL-yMh" id="3wp-Du-sd6"/>
                         <outlet property="mapView" destination="cpS-Dc-ZYS" id="W8J-IP-hKX"/>
-                        <outlet property="searchBat" destination="XGw-go-LMZ" id="teg-s6-cCN"/>
+                        <outlet property="searchBar" destination="XGw-go-LMZ" id="teg-s6-cCN"/>
                         <outlet property="viInfo" destination="o5Z-EX-l46" id="IyT-sw-WFu"/>
                     </connections>
                 </viewController>
