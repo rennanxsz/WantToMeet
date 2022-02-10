@@ -37,9 +37,9 @@ class MapViewController: UIViewController {
     }
     
     func addToMap(_ place: Place){
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = place.coordinate
+        let annotation = PlaceAnnotation(coordinate: place.coordinate, type: .place)
         annotation.title = place.name
+        annotation.address = place.address
         mapView.addAnnotation(annotation)
     }
     

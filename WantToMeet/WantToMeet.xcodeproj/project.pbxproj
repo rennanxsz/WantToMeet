@@ -17,6 +17,7 @@
 		0042937027AF1FB2000390E7 /* PlaceFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042936F27AF1FB2000390E7 /* PlaceFinderViewController.swift */; };
 		0042937227AF3813000390E7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0042937127AF3813000390E7 /* MapViewController.swift */; };
 		00A8372827B0A33D0029E53B /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8372727B0A33D0029E53B /* Place.swift */; };
+		00AAEBAA27B49E7D0048ADC0 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AAEBA927B49E7D0048ADC0 /* PlaceAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0042936F27AF1FB2000390E7 /* PlaceFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceFinderViewController.swift; sourceTree = "<group>"; };
 		0042937127AF3813000390E7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		00A8372727B0A33D0029E53B /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		00AAEBA927B49E7D0048ADC0 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				0042936F27AF1FB2000390E7 /* PlaceFinderViewController.swift */,
 				00A8372727B0A33D0029E53B /* Place.swift */,
 				0042936D27AF1DEA000390E7 /* PlacesTableViewController.swift */,
+				00AAEBA927B49E7D0048ADC0 /* PlaceAnnotation.swift */,
 				0042936027AF1826000390E7 /* Assets.xcassets */,
 				0042936227AF1826000390E7 /* LaunchScreen.storyboard */,
 				0042936527AF1826000390E7 /* Info.plist */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00AAEBAA27B49E7D0048ADC0 /* PlaceAnnotation.swift in Sources */,
 				0042935C27AF1825000390E7 /* ViewController.swift in Sources */,
 				0042937227AF3813000390E7 /* MapViewController.swift in Sources */,
 				0042936E27AF1DEA000390E7 /* PlacesTableViewController.swift in Sources */,
