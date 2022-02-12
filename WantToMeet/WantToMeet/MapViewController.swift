@@ -25,7 +25,7 @@ class MapViewController: UIViewController {
     var places: [Place]!
     var poi: [MKAnnotation] = []
     lazy var locationManager = CLLocationManager()
-    var btUserLocation = MKUserTrackingButton!
+    var btUserLocation: MKUserTrackingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.isHidden = true
