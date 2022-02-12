@@ -10,6 +10,11 @@ import MapKit
 
 class MapViewController: UIViewController {
     
+    enum MapMessageType {
+        case routError
+        case authorizationWarning
+    }
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var viInfo: UIView!
@@ -19,13 +24,15 @@ class MapViewController: UIViewController {
     
     var places: [Place]!
     var poi: [MKAnnotation] = []
-
+    lazy var locationManager = CLLocationManager()
+    var btUserLocation = MKUserTrackingButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.isHidden = true
         mapView.mapType = .mutedStandard
         viInfo.isHidden = true
         mapView.delegate = self
+        locationManager.delegate = self
         
         if places.count == 1 {
             title = places[0].name
@@ -37,7 +44,38 @@ class MapViewController: UIViewController {
             addToMap(place)
         }
         
+        configureLocationButton()
+        
         showPlaces()
+        requestUserLocationAuthorization()
+    }
+    
+    func configureLocationButton() {
+        btUserLocation = MKUserTrackingButton(mapView: mapView)
+        btUserLocation.backgroundColor = .white
+        btUserLocation.frame.origin.x = 10
+        btUserLocation.frame.origin.y = 10
+        btUserLocation.layer.cornerRadius = 5
+        btUserLocation.layer.borderWidth = 1
+        btUserLocation.layer.borderColor = UIColor(named: "main")?.cgColor
+        
+    }
+    
+    func requestUserLocationAuthorization() {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .authorizedAlways, .authorizedWhenInUse:
+                mapView.addSubview(btUserLocation)
+                case .denied:
+                    showMessage(type: .authorizationWarning)
+                case .notDetermined:
+                    locationManager.requestWhenInUseAuthorization()
+                case .restricted:
+                    break
+            }
+        } else {
+            //Não dá
+        }
     }
     
     func addToMap(_ place: Place){
@@ -57,6 +95,10 @@ class MapViewController: UIViewController {
     @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
         searchBar.resignFirstResponder()
         searchBar.isHidden = !searchBar.isHidden
+    }
+    
+    func showMessage(type: MapMessageType) {
+        
     }
     
 }
@@ -118,3 +160,22 @@ extension MapViewController: UISearchBarDelegate {
         
     }
 }
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status{
+        case .authorizedAlways, .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            mapView.addSubview(btUserLocation)
+            locationManager.startUpdatingLocation()
+        default :
+            break
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations.last!)
+    }
+}
+
