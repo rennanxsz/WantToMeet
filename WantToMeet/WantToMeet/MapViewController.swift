@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
         case routError
         case authorizationWarning
     }
-    
+    //MARK - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var viInfo: UIView!
@@ -26,6 +26,7 @@ class MapViewController: UIViewController {
     var poi: [MKAnnotation] = []
     lazy var locationManager = CLLocationManager()
     var btUserLocation: MKUserTrackingButton!
+    var selectedAnnotation : PlaceAnnotation?
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.isHidden = true
@@ -89,6 +90,12 @@ class MapViewController: UIViewController {
         mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
+    func showInfo() {
+        lbName.text = selectedAnnotation!.title
+        lbAddress.text = selectedAnnotation!.address
+        viInfo.isHidden = false
+    }
+    
     @IBAction func showRoute(_ sender: UIButton) {
     }
     
@@ -122,6 +129,19 @@ extension MapViewController: MKMapViewDelegate {
         
         return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let camera = MKMapCamera()
+        camera.centerCoordinate = view.annotation!.coordinate
+        camera.pitch = 80
+        camera.altitude = 100
+        mapView.setCamera(camera, animated: true)
+        
+        selectedAnnotation = (view.annotation as! PlaceAnnotation)
+        showInfo()
+    }
+    
 }
 
 extension MapViewController: UISearchBarDelegate {
