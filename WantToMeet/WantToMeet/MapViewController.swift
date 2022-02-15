@@ -97,6 +97,40 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func showRoute(_ sender: UIButton) {
+        
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            showMessage(type: .authorizationWarning)
+            return
+        }
+        
+        let request = MKDirections.Request()
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: selectedAnnotation!.coordinate))
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: locationManager.location!.coordinate))
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            if error == nil {
+                if let response = response {
+                    self.mapView.removeOverlays(self.mapView.overlays)
+                    
+                    let route = response.routes.first!
+                    print("Nome:", route.name)
+                    print("Distância:", route.distance)
+                    print("Duração:", route.expectedTravelTime)
+                    print("==================")
+                    for step in route.steps {
+                        print("Em \(step.distance) metros(s), \(step.instructions)")
+                    }
+                    
+                    self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+                    var annotations = self.mapView.annotations.filter({!($0 is PlaceAnnotation)})
+                    annotations.append(self.selectedAnnotation!)
+                    self.mapView.showAnnotations(annotations, animated: true)
+                    
+                }
+            } else {
+                self.showMessage(type: .routError)
+            }
+        }
     }
     
     @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
@@ -211,7 +245,10 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations.last!)
+        //if let location = locations.last {
+            //print("Velocidade:", location.speed)
+            //let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, //longitudinalMeters: 500); mapView.setRegion(region, animated: true)
+        //}
     }
 }
 
