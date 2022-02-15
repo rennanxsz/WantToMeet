@@ -125,7 +125,6 @@ class MapViewController: UIViewController {
                     var annotations = self.mapView.annotations.filter({!($0 is PlaceAnnotation)})
                     annotations.append(self.selectedAnnotation!)
                     self.mapView.showAnnotations(annotations, animated: true)
-                    
                 }
             } else {
                 self.showMessage(type: .routError)
@@ -192,6 +191,17 @@ extension MapViewController: MKMapViewDelegate {
         showInfo()
     }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = UIColor(named: "main")?.withAlphaComponent(0.8)
+            renderer.lineWidth = 5.0
+            return renderer
+            
+        }
+        
+        return MKOverlayRenderer(overlay: overlay)
+    }
 }
 
 extension MapViewController: UISearchBarDelegate {
