@@ -105,7 +105,23 @@ class MapViewController: UIViewController {
     }
     
     func showMessage(type: MapMessageType) {
+        let title = type == .authorizationWarning ? "Aviso" : "Erro"
+        let message = type == .authorizationWarning ? "Para usar os recursos de localicação do app, você precisa permitir o uso na tela de Ajustes" : "Não foi possível encontrar está rota"
         
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        if type == .authorizationWarning {
+            let confirmAction = UIAlertAction(title: "ir para Ajustes", style: .default, handler: {
+                (action) in
+                
+                if let appSettings = URL(string: UIApplication.openSettingsURLString ) {
+                    UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+                }
+            })
+            alert.addAction(confirmAction)
+        }
+        present(alert, animated: true, completion: nil)
     }
     
 }
